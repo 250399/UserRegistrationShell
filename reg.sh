@@ -35,7 +35,7 @@ fi
 read -sp"Enter password : " password
 if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* && "$password" == *[[:digit:]]* ]]
 then
-	echo valid
+	[[ $password =~ [^a-zA-Z0-9_\s] ]] && echo valid || echo invalid
 else
 	echo invalid
 fi
