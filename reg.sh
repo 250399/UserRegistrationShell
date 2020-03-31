@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-
 echo Welcome User Registration program
 
 read -p"Enter User name :" user
@@ -34,7 +33,7 @@ fi
 
 [ "$noFlag" = "valid" ] && echo PhoneNumber is vlaid ||echo Invalid Pno 
 read -sp"Enter password : " password
-if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* ]]
+if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* && "$password" == *[[:digit:]]* ]]
 then
 	echo valid
 else
