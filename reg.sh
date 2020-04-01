@@ -2,7 +2,6 @@
 
 
 echo Welcome User Registration program
-
 read -p"Enter User name :" user
 userFlag=valid
 for i in 1 2
