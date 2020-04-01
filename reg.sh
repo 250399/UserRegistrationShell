@@ -9,7 +9,7 @@ for i in 1 2
 do
 	name=`echo $user | awk  '{ print $'$i' }'`
 	echo $name
-	if [[ $name =~ ^[A-Z@][a-z]{2,} ]] 
+	if [[ $name =~ ^[A-Z@][a-z]{2,} ]]
 	then
 		continue
 	else
@@ -31,11 +31,17 @@ else
 	noFlag=invalid
 fi
 
-[ "$noFlag" = "valid" ] && echo PhoneNumber is vlaid ||echo Invalid Pno 
+[ "$noFlag" = "valid" ] && echo PhoneNumber is valid ||echo Invalid Pno
 read -sp"Enter password : " password
+SymbolCount=0
 if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* && "$password" == *[[:digit:]]* ]]
 then
-	[[ $password =~ [^a-zA-Z0-9_\s] ]] && echo valid || echo invalid
+	if [[ `echo $password | awk '{print gsub("[^a-zA-Z0-9]", "")}'` -eq 1 ]]
+	then
+	 	echo valid
+	else
+		echo invalid
+	fi
 else
 	echo invalid
 fi
