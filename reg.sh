@@ -7,7 +7,6 @@ userFlag=valid
 for i in 1 2
 do
 	name=`echo $user | awk  '{ print $'$i' }'`
-	echo $name
 	if [[ $name =~ ^[A-Z@][a-z]{2,} ]]
 	then
 		continue
