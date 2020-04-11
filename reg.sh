@@ -29,6 +29,7 @@ else
 	noFlag=invalid
 fi
 
+<<<<<<< HEAD
 [ "$noFlag" = "valid" ] && echo PhoneNumber is valid ||echo Invalid Pno
 read -sp"Enter password : " password
 SymbolCount=0
@@ -43,3 +44,8 @@ then
 else
 	echo invalid
 fi
+=======
+
+read -p"Enter User name :" user
+[[ $user =~ ^[A-Z@][a-z]{2,} ]] && echo Valid || echo Invalid
+>>>>>>> UC1-ValidFirstName
